@@ -1,16 +1,16 @@
 ## Features:
 
 
-Develop a Blog App/Website covering both frontend and backend, along with an admin panel.  /
-Display blog posts, and an admin panel/dashboard will be created using Next.js for uploading and managing these posts. /
-A backend will be developed to handle API requests, enabling us to store blog posts in a MongoDB database and retrieve them for display on the website. /
-Tailwind CSS will be used to design the layout and components of the blog website, providing an efficient way to style the Next.js project. /
+<br>Develop a Blog App/Website covering both frontend and backend, along with an admin panel.  
+<br>Display blog posts, and an admin panel/dashboard will be created using Next.js for uploading and managing these posts. 
+<br>A backend will be developed to handle API requests, enabling us to store blog posts in a MongoDB database and retrieve them for display on the website. 
+<br>Tailwind CSS will be used to design the layout and components of the blog website, providing an efficient way to style the Next.js project. 
 
 ## Technologies </>
 
-Next JS /
-MongoDB /
-Tailwind CSS /
+<br>Next JS 
+<br>MongoDB 
+<br>Tailwind CSS 
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
