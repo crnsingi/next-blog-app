@@ -14,6 +14,7 @@ const Header = () => {
             <p className='mt-10 max-w-[740px] m-auto text-xs sm:text-base'>Text to be plotted here</p>
             <form className='flex justify-between max-w-[500px] scale-75 sm:scale-100 mx-auto mt-10 border border-black ' action="">
                 <input type="email" placeholder='Enter your email' className='pl-4 outline-none'/>  
+                <button className='border-1 border-black py-4 px-4 sm:px-8'>Subscribe</button>
             </form>
         </div>
     </div>
