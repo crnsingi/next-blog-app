@@ -8,7 +8,7 @@ const BlogItem = () => {
     <Image src={blog_data[0].image} alt='' width={400} height={400} className='border-b border-black' />
     <p className='ml-5 mt-5 px-1 inline-block bg-black text-white text-sm'>{blog_data[0].category}</p>
     <div className='p-5'>
-        <h5>{blog_data[0].title}</h5>
+        <h5 className='mb-2 text-lg font-medium tracking-tight'>{blog_data[0].title}</h5>
 
     </div>
     </div>
