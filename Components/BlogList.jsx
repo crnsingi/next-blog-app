@@ -1,4 +1,6 @@
 import React from 'react'
+import BlogItem from './BlogItem'
+import { blog_data } from '@/Assets/assets'
 
 const BlogList = () => {
   return (
@@ -9,9 +11,12 @@ const BlogList = () => {
             <button>Technology</button>
             <button>Startup</button>
             <button>Lifestyle</button>
-
         </div>
-
+        <div className='flex flex-wrap justify-around gap-1 gap-y-10 mb-16 xl:max-24 '>
+            {blog_data.map((item,index)=>{
+                return <BlogItem key={index}  image={item.image} title={item.title} description={item.description} category={item.category}/>
+            })}
+        </div>
     </div>
   )
 }
