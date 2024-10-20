@@ -1,3 +1,4 @@
+'use client'
 import BlogItem from "@/Components/BlogItem";
 import Header from "@/Components/Header";
 
