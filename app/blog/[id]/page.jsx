@@ -28,7 +28,10 @@ return (
                 Get started <Image src={assets.arrow} alt=''/>
                 </button>
         </div>
+        <div className='text-center my-24'>
+            <h1>{data.title}</h1>
 
+        </div>
     </div>
   )
 }
