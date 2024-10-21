@@ -25,7 +25,7 @@ return (
         <div className=' flex justify-between items-center'>
             <Image src={assets.logo} width={180} alt='' className='w-[130px] sm:w-auto' />
             <button className='flex items-center gap-2 font-medium py-1 px-3 sm:py-3 sm:px-6 border border-black shadow-[-7px_7px_0px_#000000]'>
-                Get started <Image />
+                Get started <Image src={assets.arrow} alt=''/>
                 </button>
         </div>
 
