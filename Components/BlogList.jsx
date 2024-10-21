@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import BlogItem from './BlogItem'
 import { blog_data } from '@/Assets/assets'
 
 const BlogList = () => {
+
+    const [menu,setMenu] = useState("All");
+
   return (
     <div>
         <div className='flex justify-center gap-6 my-10'>
