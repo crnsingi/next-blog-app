@@ -21,4 +21,5 @@ export async function POST(request){
     const image = formData.get('image');
     const imageByteData = await image.arrayBuffer();
     const buffer = Buffer.from(imageByteData);
+    const path = `./public/${time}_${image.name}`;
 }
