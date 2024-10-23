@@ -38,6 +38,7 @@ export async function POST(request){
             }
 
             await BlogModel.create(blogData);
+            console.log("blog Saved");
 
-    return NextResponse.json({imgURL})
+    return NextResponse.json({success:true,msg:"Blog Added"})
 }
