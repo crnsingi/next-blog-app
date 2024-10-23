@@ -9,8 +9,8 @@ const Sidebar = () => {
             <Image src={assets.logo} width={120} alt=''/>
         </div>
         <div className='w-28 sm:w-80 h-[100vh] relative py-12 border border-black'>
-            <div>
-                
+            <div className='flex items-center border border-black'>
+
             </div>
 
         </div>
