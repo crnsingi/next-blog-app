@@ -1,4 +1,5 @@
 import { ConnectDB } from "@/lib/config/db"
+import BlogModel from "@/lib/models/BlogModel";
 import { write } from "fs";
 const { NextResponse } = require("next/server")
 import {writeFile} from 'fs/promises'
@@ -34,8 +35,9 @@ export async function POST(request){
                 author: `${formData.get('author')}`,
                 image:`${imgURL}`,
                 authorImg:`${formData.get('authorImg')}`
-
             }
+
+            await BlogModel.create(blogData);
 
     return NextResponse.json({imgURL})
 }
