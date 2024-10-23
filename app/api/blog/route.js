@@ -1,4 +1,5 @@
 import { ConnectDB } from "@/lib/config/db"
+import { write } from "fs";
 const { NextResponse } = require("next/server")
 import {writeFile} from 'fs/promises'
 
@@ -22,4 +23,6 @@ export async function POST(request){
     const imageByteData = await image.arrayBuffer();
     const buffer = Buffer.from(imageByteData);
     const path = `./public/${timestamp}_${image.name}`;
+    await writeFile(path,buffer);
+    const imgURL = `/${timestamp}_${image.name}`;
 }
