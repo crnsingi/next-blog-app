@@ -10,6 +10,7 @@ const Sidebar = () => {
         </div>
         <div className='w-28 sm:w-80 h-[100vh] relative py-12 border border-black'>
             <div className='flex items-center border border-black gap-3 font-medium px-3 py-2 bg-white shadow-[-5px_5px_0px_#000000]'>
+                <Image src={assets.add_icon} alt='' width={28} /><p>Add blogs</p>
 
             </div>
 
