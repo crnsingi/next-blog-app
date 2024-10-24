@@ -1,5 +1,6 @@
 'use client'
 import { assets } from '@/Assets/assets'
+import axios from 'axios'
 import Image from 'next/image'
 import React, { useState } from 'react'
 
@@ -28,7 +29,10 @@ const page = () => {
         formData.append('title',data.title);
         formData.append('description',data.description);
         formData.append('category',data.category);
-
+        formData.append('author',data.author);
+        formData.append('authorImg',data.authorImg);
+        formData.append('image',image);
+        const response = await axios.post('/api/blog', formData);
     }
 
 
