@@ -8,9 +8,10 @@ const page = () => {
     <>
       <form className='pt-5 px-5 sm:pt-12 sm:pl-16'>
         <p className='text-xl'>Upload thumbnail</p>
-        <label htmlFor="">
+        <label htmlFor="image">
             <Image className='mt-4' src={assets.upload_area} width={140} height={70} alt=''/>
         </label>
+        <input type="file" id='image' hidden required/>
       </form>
     </>
   )
