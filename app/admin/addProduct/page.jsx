@@ -23,7 +23,8 @@ const page = () => {
         <p className='text-xl mt-4'>Blog category</p>
         <select name="category">
             <option value="Startup">Startup</option>
-
+            <option value="Technology">Technology</option>
+            <option value="Lifestyle">Lifestyle</option>
         </select>
       </form>
     </>
