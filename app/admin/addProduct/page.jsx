@@ -24,7 +24,9 @@ const page = () => {
 
     const onSubmitHandler = async (e) =>{
         e.preventDefault();
-
+        const formData = new FormData();
+        formData.append('title',data.title);
+        formData.append('description',data.description);
     }
 
 
