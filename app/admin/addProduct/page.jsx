@@ -27,6 +27,8 @@ const page = () => {
         const formData = new FormData();
         formData.append('title',data.title);
         formData.append('description',data.description);
+        formData.append('category',data.category);
+
     }
 
 
