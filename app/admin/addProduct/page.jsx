@@ -16,6 +16,8 @@ const page = () => {
             <Image className='mt-4' src={!image?assets.upload_area:URL.createObjectURL(image)} width={140} height={70} alt=''/>
         </label>
         <input onChange={(e)=>setImage(e.target.files[0])}  type="file" id='image' hidden required/>
+        <p className='text-xl mt-4'>Blog title</p>
+        <input className='w-full sm:w-[500px]' type="text" placeholder='Type here' required />
       </form>
     </>
   )
