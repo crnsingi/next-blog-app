@@ -36,10 +36,18 @@ const page = () => {
         const response = await axios.post('/api/blog', formData);
 
         if (response.data.sucess) {
-            toast.success(response.data.msg)
+            toast.success(response.data.msg);
+            setImage(false);
+            setData({
+                title: "",
+                description: "",
+                category: "Startup",
+                author:"Cesar Nsingi",
+                authorImg:"/author_img.png"
+            });
         }
         else{
-            toast.error('Error')
+            toast.error('Error');
         }
     }
 
