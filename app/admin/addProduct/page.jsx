@@ -33,6 +33,10 @@ const page = () => {
         formData.append('authorImg',data.authorImg);
         formData.append('image',image);
         const response = await axios.post('/api/blog', formData);
+
+        if (response.data.sucess) {
+
+        }
     }
 
 
