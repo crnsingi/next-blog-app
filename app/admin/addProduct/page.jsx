@@ -6,6 +6,11 @@ import React, { useState } from 'react'
 const page = () => {
 
     const [image,setImage] = useState(false);
+    const [data,setData] = useState({
+        title:"",
+        description: "",
+        category: "Startup"
+    })
 
 
   return (
