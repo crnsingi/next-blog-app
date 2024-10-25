@@ -1,8 +1,12 @@
 import { assets } from '@/Assets/assets'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 
 const Header = () => {
+
+  const [email,setEmail] = useState("");
+
+
   return (
     <div className='py-5 px-5 md:px-12 lg:px-28'>
         <div className='flex justify-between items-center'>
