@@ -14,7 +14,7 @@ const BlogTableItem = ({authorImg,title,author,date}) => {
             {title?title:"no title"}
         </td>
         <td className='px-6 py-4'>
-            {"25 Oct 2024"}
+            {BlogDate.toDateString()}
         </td>
         <td className='px-6 py-4 cursor-pointer'>
             x
