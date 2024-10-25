@@ -4,6 +4,7 @@ import { write } from "fs";
 const { NextResponse } = require("next/server")
 import {writeFile} from 'fs/promises'
 import { title } from "process";
+const fs = require('fs')
 
 const LoadDB = async () => {
     await ConnectDB();
@@ -62,6 +63,7 @@ export async function POST(request){
 // Api Endpoint to delete Blog
 
 export async function DELETE(request){
-    const id = await request.nextUrl.searchParams.get('')
+    const id = await request.nextUrl.searchParams.get('id');
+    const blog = await BlogModel.findById(id);
 
 }
