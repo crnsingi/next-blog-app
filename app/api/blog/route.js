@@ -57,3 +57,11 @@ export async function POST(request){
 
     return NextResponse.json({success:true,msg:"Blog Added"})
 }
+
+
+// Api Endpoint to delete Blog
+
+export async function DELETE(request){
+    const id = await request.nextUrl.searchParams.get('')
+
+}
