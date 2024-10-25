@@ -8,9 +8,13 @@ const page = () => {
       <div className='relative h-[80vh] max-w-[850px] overflow-x-auto mt-4 border border-gray-400 scrollbar-hide'>
         <table className='w-full text-sm text-gray-500'>
           <thead className='text-sm text bg-gray-700 text-left uppercase bg-gray-50'>
+            <tr>
+              <th scope='col' className='hidden sm:block'>
 
+              </th>
+
+            </tr>
           </thead>
-
         </table>
       </div>
     </div>
