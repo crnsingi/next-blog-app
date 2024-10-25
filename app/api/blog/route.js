@@ -66,5 +66,7 @@ export async function DELETE(request){
     const id = await request.nextUrl.searchParams.get('id');
     const blog = await BlogModel.findById(id);
     fs.unlink(`./public${blog.image}`,()=>{});
+    await BlogModel.findByIdAndDelete(id);
+    return NextResponse.json({msg:"Blog Deleted"});
 
 }
