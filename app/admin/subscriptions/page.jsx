@@ -12,6 +12,10 @@ const page = () => {
     setEmails(response.data.emails)
   }
 
+  const deleteEmail = async (mongoId) =>{
+    
+  }
+
   useEffect(()=>{
     fetchEmails();
   },[])
