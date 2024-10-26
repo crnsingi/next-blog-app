@@ -1,8 +1,11 @@
 import React from 'react'
 
-const SubsTableItem = () => {
+const SubsTableItem = ({email}) => {
   return (
-        <tr>
+        <tr className='bg-white border-b text-left'>
+            <th scope='row' className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap'>
+
+            </th>
 
         </tr>
   )
