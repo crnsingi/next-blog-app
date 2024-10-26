@@ -20,3 +20,7 @@ export async function GET(request){
     const emails = await EmailModel.find({});
     return NextResponse.json({emails});
 }
+
+export async function DELETE(request) {
+    
+}
