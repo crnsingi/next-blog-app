@@ -36,7 +36,7 @@ const page = () => {
           </thead>
           <tbody>
             {emails.map((item,index)=>{
-              return   <SubsTableItem/>;
+              return <SubsTableItem key={index} mongoId={item._id} email={item.email} date={item.date}/>;
             })}
           </tbody>
         </table>
