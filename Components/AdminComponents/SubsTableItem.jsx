@@ -10,7 +10,7 @@ const SubsTableItem = ({email,mongoId,deleteEmail,date}) => {
                 {email?email:"No Email"}
             </th>
             <td className='px-6 py-4 hidden sm:block'>{emailDate.toDateString()}</td>
-            <td className='px-6 py-4 cursor-pointer' onClick={()=>deleteEmail}>x</td>
+            <td className='px-6 py-4 cursor-pointer' onClick={()=>deleteEmail(mongoId)}>x</td>
         </tr>
   )
 }

@@ -21,6 +21,7 @@ const page = () => {
     })
     if(response.data.success) {
       toast.success(response.data.msg);
+      fetchEmails();
     }
     else{
       toast.error("Error");
