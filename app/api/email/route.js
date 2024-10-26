@@ -22,5 +22,6 @@ export async function GET(request){
 }
 
 export async function DELETE(request) {
-    
+    const id = await request.nextUrl.searchParams.get("id");
+
 }
