@@ -35,7 +35,9 @@ const page = () => {
             </tr>
           </thead>
           <tbody>
-            <SubsTableItem/>
+            {emails.map((item,index)=>{
+              return   <SubsTableItem/>;
+            })}
           </tbody>
         </table>
       </div>
