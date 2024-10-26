@@ -9,11 +9,16 @@ const page = () => {
         <table className='w-full text-sm text-gray-500'>
           <thead className='text-xs text-left text-gray-700 uppercase bg-gray-50'>
             <tr>
-              <th>
-                
+              <th scope='col' className='px-6 py-3'>
+                Email Subscription
+              </th>
+              <th scope='col'  className='hidden sm:block px-6 py-3'>
+                Date
+              </th>
+              <th scope='col' className='px-6 py-3'>
+                Action
               </th>
             </tr>
-
           </thead>
         </table>
       </div>
