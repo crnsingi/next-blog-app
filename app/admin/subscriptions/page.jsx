@@ -1,4 +1,5 @@
 'use client'
+import SubsTableItem from '@/Components/AdminComponents/SubsTableItem'
 import React from 'react'
 
 const page = () => {
@@ -21,7 +22,7 @@ const page = () => {
             </tr>
           </thead>
           <tbody>
-            
+            <SubsTableItem/>
           </tbody>
         </table>
       </div>
