@@ -40,8 +40,9 @@ return (data?<>
     </div>
     <div className='mx-5 max-w-[800px] md:mx-auto mt-[-100px] mb-10'>
         <Image className='border-4 border-white' src={data.image} width={1280} height={720} alt='' />
-        <h1 className='my-8 text-[26px] font-semibold'>Introduction:</h1>
-        <p>{data.description}</p>
+        <p>
+            {data.description}
+        </p>
         <h3 className='my-5 text-[18px] font-semibold'>Step 1: Self-Reflection and Goal Setting</h3>
         <p className='my-3'>Beofre you can manage your lifestyle</p>
         <p className='my-3'>Beofre you can manage your lifestyle</p>
@@ -54,7 +55,8 @@ return (data?<>
         <h3 className='my-5 text-[18px] font-semibold'>Conclusion</h3>
         <p className='my-3'>Managing your lifestyle</p>
         <div className='my-24'>
-            <p className='text-black font font-semibold my-4'>Share this articule on social media</p>
+            <p className='text-black font font-semibold my-4'>
+                Share this articule on social media</p>
             <div className='flex'>
                 <Image src={assets.facebook_icon} width={50} alt='' />
                 <Image src={assets.twitter_icon} width={50} alt='' />
