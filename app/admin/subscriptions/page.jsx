@@ -1,7 +1,7 @@
 'use client'
 import SubsTableItem from '@/Components/AdminComponents/SubsTableItem'
 import axios from 'axios';
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const page = () => {
 
@@ -12,6 +12,9 @@ const page = () => {
     setEmails(response.data.emails)
   }
 
+  useEffect(()=>{
+    fetchEmails();
+  },[])
 
   return (
     <div className='flex-1 pt-5 px-5 sm:pt-12 sm:pl-16'>
