@@ -8,6 +8,11 @@ const page = () => {
       <div className='relative max-w-[600px] h-[80vh] overflow-x-auto mt-4 border border-gray-400 scollbar-hide'>
         <table className='w-full text-sm text-gray-500'>
           <thead className='text-xs text-left text-gray-700 uppercase bg-gray-50'>
+            <tr>
+              <th>
+                
+              </th>
+            </tr>
 
           </thead>
         </table>
