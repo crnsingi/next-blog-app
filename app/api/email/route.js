@@ -24,5 +24,6 @@ export async function GET(request){
 export async function DELETE(request) {
     const id = await request.nextUrl.searchParams.get("id");
     await EmailModel.findByIdAndDelete(id);
+    return NextResponse.json({success:true,msg:"Email deleted"})
 
 }
