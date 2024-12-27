@@ -1,30 +1,37 @@
-import { connectToDatabase} from '@/lib/config/db';
-import BlogModel from '@/lib/models/BlogModel';
-import "dotenv/config";
 const { NextResponse } = require("next/server");
-import { writeFile } from 'fs/promises';
-import path from 'path';
-const fs = require('fs');
+import { connectToDatabase } from "@/lib/config/db";
+import BlogModel from "@/lib/models/BlogModel";
+import "dotenv/config";
+const fs = require("fs");
+import { writeFile } from "fs/promises";
 
-// Ensure database is connected properly
-const LoadDatabase = async () => { 
-  await connectToDatabase(`${process.env.MONGODB_URL}/blogapp`);
-}
+// connect to database
+const LoadDatabase = async () => {
+  await connectToDatabase(`${process.env.MONGODB_URL}/blog-app`);
+};
 
 LoadDatabase();
 
-
 //API endpoint to get all blogs
 export async function GET(request) {
-  const blogId = request.nextUrl.searchParams.get('id');
-  if(blogId){
-    const blog = await BlogModel.findById(blogId);
-    return NextResponse.json(blog)
-  }else{
-    const blogs = await BlogModel.find({})
-    return NextResponse.json({blogs});
+  try {
+    const blogId = request.nextUrl.searchParams.get("id");
+    if (blogId) {
+      const blog = await BlogModel.findById(blogId);
+      return NextResponse.json({ success: true, blog });
+    } else {
+      const blogs = await BlogModel.find({});
+      return NextResponse.json({ success: true, blogs });
+    }
+  } catch (error) {
+    console.error("Error fetching blogs: ", error);
+    return NextResponse.json({
+      success: false,
+      message: "Error while fetching blogs",
+    });
   }
 }
+
 
 
 //API endpoint for uploading blogs
