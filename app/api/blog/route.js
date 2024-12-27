@@ -1,6 +1,6 @@
 import { connectDB } from '@/lib/config/db';
 import BlogModel from '@/lib/models/BlogModel';
-import { NextResponse } from 'next/server';
+const { NextResponse } = require("next/server");
 import { writeFile } from 'fs/promises';
 import path from 'path';
 const fs = require('fs');
