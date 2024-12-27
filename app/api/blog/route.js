@@ -1,5 +1,6 @@
 import { connectToDatabase} from '@/lib/config/db';
 import BlogModel from '@/lib/models/BlogModel';
+import "dotenv/config";
 const { NextResponse } = require("next/server");
 import { writeFile } from 'fs/promises';
 import path from 'path';
