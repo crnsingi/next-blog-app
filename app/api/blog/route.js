@@ -8,7 +8,8 @@ const fs = require('fs');
 
 // Ensure database is connected properly
 const LoadDatabase = async () => { 
-  
+  await connectToDatabase(`${process.env.MONGODB_URL}/blogapp`);
+
 }
 loadDB();
 
