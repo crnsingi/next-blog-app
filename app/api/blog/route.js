@@ -12,7 +12,27 @@ const LoadDatabase = async () => {
 
 LoadDatabase();
 
-//API endpoint to get all blogs
+// Upload Image helper function
+const handleImageUpload = async (data, imageInputFieldName) => {
+  const timestamp = Date.now();
+
+  const image = data.get(imageInputFieldName);
+  if (!image) {
+    throw new Error(`${imageInputFieldName} not found.`);
+  }
+
+  const imageByteData = await image.arrayBuffer();
+  const buffer = Buffer.from(imageByteData);
+  const path = `./public/${timestamp}_${image.name}`;
+  await writeFile(path, buffer);
+  const url = `/${timestamp}_${image.name}`;
+
+  return url;
+};
+
+export default handleImageUpload;
+
+// API endpoint to get all blogs
 export async function GET(request) {
   try {
     const blogId = request.nextUrl.searchParams.get("id");
@@ -32,72 +52,51 @@ export async function GET(request) {
   }
 }
 
-
-
-//API endpoint for uploading blogs
+// API endpoint for uploading blogs
 export async function POST(request) {
   try {
     const formData = await request.formData();
-    const timeStamp = Date.now();
 
-    // Handle image upload
-    const image = formData.get('image');
-    if (!image) {
-      return NextResponse.json({ success: false, message: 'No image provided' });
-    }
+    const imageUrl = await handleImageUpload(formData, "image");
 
-    const imageByteData = await image.arrayBuffer();
-    const buffer = Buffer.from(imageByteData);
-
-    // Ensure the path is absolute for writing to the correct directory
-    const uploadPath = path.join(process.cwd(), 'public', `${timeStamp}_${image.name}`);
-    await writeFile(uploadPath, buffer);
-    const imageUrl = `/${timeStamp}_${image.name}`;
-
-    // Blog data creation
     const blogData = {
-      title: formData.get('title'),
-      description: formData.get('description'),
-      category: formData.get('category'),
-      author: formData.get('author'),
+      title: formData.get("title"),
+      description: formData.get("description"),
+      category: formData.get("category"),
+      author: formData.get("author"),
       image: imageUrl,
-      authorImg: formData.get('authorImg'),
+      authorImg: `${formData.get("authorImg")}`,
     };
 
     await BlogModel.create(blogData);
-    return NextResponse.json({ success: true, message: 'Blog Added' });
+
+    return NextResponse.json({ success: true, message: "Blog Added" });
   } catch (error) {
-    console.error(error);
-    return NextResponse.json({ success: false, message: 'Error saving blog' });
+    console.error("Error adding blog: ", error);
+    return NextResponse.json({
+      success: false,
+      msg: "Error adding blog",
+      error: error,
+    });
   }
 }
 
-
-//API endpoint for deleting blog
-export async function DELETE(request){
-  const id = request.nextUrl.searchParams.get('id');
-  const blog = await BlogModel.findById(id);
-  fs.unlink(`./public${blog.image}`, ()=>{});
-  await BlogModel.findByIdAndDelete(id);
-  return NextResponse.json({message: 'Blog deleted'});
+// API endpoint to delete blog
+export async function DELETE(request) {
+  try {
+    const id = await request.nextUrl.searchParams.get("id");
+    const blog = await BlogModel.findById(id);
+    fs.unlink(`./public/${blog.image}`, () => {});
+    await BlogModel.findByIdAndDelete(id);
+    return NextResponse.json({
+      success: true,
+      message: "Blog deleted successfully",
+    });
+  } catch (error) {
+    console.error(error);
+    return NextResponse.json({
+      success: false,
+      message: "Error while deleting blog",
+    });
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-// export async function DELETE() {
-//   try {
-//     await BlogModel.deleteMany({});
-//     return NextResponse.json({ message: 'All blogs deleted successfully' });
-//   } catch (error) {
-//     return NextResponse.json({ message: 'Failed to delete blogs', error: error.message }, { status: 500 });
-//   }
-// }
