@@ -1,7 +1,6 @@
 const { NextResponse } = require("next/server");
 import { connectToDatabase } from "@/lib/config/db";
 import BlogModel from "@/lib/models/BlogModel";
-import "dotenv/config";
 const fs = require("fs");
 import { writeFile } from "fs/promises";
 
