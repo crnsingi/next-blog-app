@@ -6,7 +6,9 @@ import path from 'path';
 const fs = require('fs');
 
 // Ensure database is connected properly
+async function loadDB() {
   await connectDB();
+}
 
 loadDB();
 
