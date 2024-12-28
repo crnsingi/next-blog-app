@@ -7,7 +7,7 @@ const Footer = () => {
     <div className="flex justify-around flex-col gap-2 sm:gap-0 sm:flex-row bg-black py-5 items-center">
       <Image src={assets.logo_light} alt="footer-logo-image" width={120} />
       <p className="text-sm text-white">
-        All right reserved. Copyright @blogger
+        All right reserved. Copyright @Myema
       </p>
       <div className="flex">
         <Image src={assets.facebook_icon} alt="social-media-icon" width={40} />
